@@ -13,14 +13,14 @@
         <div>
             <h1>COVID-19 Spread in America</h1>
             <h5>Cases and Deaths Measured at the Beginning of the Month</h4>
-            <h6>February 1st, 2020</h6>
+            <h6>March 1st, 2020</h6>
             <!-- <a href="#" class="previous">&laquo; Previous</a> -->
             <a href="slide1.html"><button>Restart Narrative Visualization</button></a>
             <br>
             <br>
             <div class="btn-group">
-                <button style="background-color: lightslategrey;">Feb</button>
-                <a href="march.html"><button>Mar</button></a>
+                <a href="february.html"><button>Feb</button></a>
+                <button style="background-color: lightslategrey;">Mar</button>
                 <a href="april.html"><button>Apr</button></a>
                 <a href="may.html"><button>May</button></a>
                 <a href="june.html"><button>Jun</button></a>
@@ -30,12 +30,25 @@
     </div>
 <script>
 
-var x = d3.scaleBand().domain([0,1,2,3,4]).range([0, 500]);
-var y = d3.scaleLinear().domain([0,10]).range([500, 0]);
+var x = d3.scaleBand().domain([0,1,2,3,4,5,6,7,8,9,10,11,12]).range([0, 500]);
+var y = d3.scaleLinear().domain([0,35]).range([500, 0]);
 
 var colors = ["#2980b9", "#e74c3c", "#f2b447", "#d9d574", "#b33040"];
 
-var data = [{"group":0,"value":1, "test":0}, {"group":1,"value":3, "test":0}, {"group":2,"value":2, "test":0}, {"group":3,"value":1, "test":0}, {"group":4,"value":1, "test":0}];
+// var data = [{"group":0,"value":1, "test":0}, {"group":1,"value":3, "test":0}, {"group":2,"value":2, "test":0}, {"group":3,"value":1, "test":0}, {"group":4,"value":1, "test":0}];
+var data = [{'group':0 ,'value':1,'test':0},
+{'group':1 ,'value':33,'test':0},
+{'group':2 ,'value':2,'test':0},
+{'group':3 ,'value':3,'test':0},
+{'group':4 ,'value':1,'test':0},
+{'group':5 ,'value':13,'test':0},
+{'group':6 ,'value':1,'test':0},
+{'group':7 ,'value':2,'test':0},
+{'group':8 ,'value':2,'test':0},
+{'group':9 ,'value':11,'test':0},
+{'group':10 ,'value':1,'test':0},
+{'group':11 ,'value':17,'test':3},
+{'group':12 ,'value':1,'test':0}];
 
 var datagroups = ["value", "test"];
 
@@ -66,7 +79,19 @@ d3.select('svg').append("g").attr("transform", "translate(20,20)")
             tooltip.select("text").text(d[0] === 0 ? d[1]: d[1]-d[0]);
         });
 
-var tickValueLabels = ["Arizona","California","Illinois","Massachusetts","Washington","Ohio"];
+var tickValueLabels = ['Arizona',
+'California',
+'Florida',
+'Illinois',
+'Massachusetts',
+'Nebraska',
+'New York',
+'Oregon',
+'Rhode Island',
+'Texas',
+'Utah',
+'Washington',
+'Wisconsin'];
 
 d3.select('svg').append('g').attr("transform", "translate(20,20)").call(d3.axisLeft(y))
 d3.select('svg').append('g').attr("transform", "translate(20,520)").call(d3.axisBottom(x).tickFormat(function(d,i){ return tickValueLabels[i];})).selectAll("text")
