@@ -14,7 +14,7 @@
             <h1>COVID-19 Spread in America</h1>
                 <h5>Cases and Deaths Measured at the Beginning of the Month</h4>
                 <h6>February 1st, 2020</h6>
-            <!-- <a href="#" class="previous">&laquo; Previous</a> -->
+           
             <a href="slide2.html" class="next"><button>Next &raquo;</button></a> 
             <p>This visualization starts its journey on February 1st, 2020, when COVID-19 had been found in only 5 states. Much of the major media coverage at the time was still focused on China, 
                 with limited discussion of community spreading or mask wearing, topics that would only enter the American lexicon much later in the pandemic. At this point in time, most of the policy 
@@ -33,7 +33,7 @@
 var x = d3.scaleBand().domain([0,1,2,3,4]).range([0, 500]);
 var y = d3.scaleLinear().domain([0,10]).range([500, 0]);
 
-var colors = ["#2980b9", "#e74c3c", "#f2b447", "#d9d574", "#b33040"];
+var colors = ["#2980b9", "#e74c3c"];
 
 var data = [{"group":0,"value":1, "test":0}, {"group":1,"value":3, "test":0}, {"group":2,"value":2, "test":0}, {"group":3,"value":1, "test":0}, {"group":4,"value":1, "test":0}];
 

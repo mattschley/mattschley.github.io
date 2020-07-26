@@ -39,9 +39,8 @@
 var x = d3.scaleBand().domain([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49]).range([0, 500]);
 var y = d3.scaleLinear().domain([0,400000]).range([500, 0]);
 
-var colors = ["#2980b9", "#e74c3c", "#f2b447", "#d9d574", "#b33040"];
+var colors = ["#2980b9", "#e74c3c"];
 
-// var data = [{"group":0,"value":1, "test":0}, {"group":1,"value":3, "test":0}, {"group":2,"value":2, "test":0}, {"group":3,"value":1, "test":0}, {"group":4,"value":1, "test":0}];
 var data = [{'group':0 ,'value':38962,'test':972},
 {'group':1 ,'value':1174,'test':12},
 {'group':2 ,'value':84152,'test':1726},
@@ -122,7 +121,6 @@ d3.select('svg').append("g").attr("transform", "translate(35,35)")
             tooltip.select("text").text(d[0] === 0 ? d[1]: d[1]-d[0]);
         });
 
-// var tickValueLabels = ["Arizona","California","Illinois","Massachusetts","Washington","Ohio"];
 var tickValueLabels = ['Alabama',
 'Alaska',
 'Arizona',
