@@ -88,13 +88,13 @@ var data = [{'group':0 ,'value':7294,'test':289},
 
 var datagroups = ["value", "test"];
 
-var stackedData = d3.stack()
+var stacks = d3.stack()
     .keys(datagroups)
     (data)
 
 d3.select('svg').append("g").attr("transform", "translate(35,35)")
     .selectAll("g")
-    .data(stackedData)
+    .data(stacks)
     .enter().append("g")
       .attr("fill", function(d,i) { return colors[i]; })
       .selectAll("rect")
@@ -175,21 +175,19 @@ d3.select('svg').append('g').attr("transform", "translate(35,535)").call(d3.axis
     .style("text-anchor", "start"); 
 
 var tooltip = d3.select('svg').append("g")
-.attr("class", "tooltip")
 .style("display", "none");
     
 tooltip.append("rect")
-  .attr("width", 30)
+  .attr("width", 55)
   .attr("height", 20)
-  .attr("fill", "white")
+  .attr("fill", "black")
   .style("opacity", 1);
 
 tooltip.append("text")
-  .attr("x", 15)
-  .attr("dy", "1.2em")
-  .style("text-anchor", "middle")
-  .attr("font-size", "12px")
-  .attr("font-weight", "bold");
+  .attr("x", 7)
+  .attr("dy", "1.0em")
+  .style("fill", "white")
+  .attr("font-size", "15px")
 </script>
 </body>
 </html>
