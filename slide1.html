@@ -90,6 +90,16 @@ tooltip.append("text")
   .attr("dy", "1.0em")
   .style("fill", "white")
   .attr("font-size", "15px")
+
+d3.select('svg').append("g").append("text")
+    .attr("x", 235)
+    .attr("y", 374)
+    .attr("fill", "black")
+    .attr("opacity", 1)
+    .text("California has highest case count")
+
+d3.select('svg').append("circle").attr("cx", 210).attr("cy", 370).attr("r", 20).style('fill', 'none').attr('stroke', 'black');
+
 </script>
 </body>
 </html>

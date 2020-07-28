@@ -194,6 +194,24 @@ tooltip.append("text")
   .attr("dy", "1.0em")
   .style("fill", "white")
   .attr("font-size", "15px")
+
+d3.select('svg').append("g").append("text")
+    .attr("x", 400)
+    .attr("y", 290)
+    .attr("fill", "black")
+    .attr("opacity", 1)
+    .text("Texas cases spiking")
+
+d3.select('svg').append("circle").attr("cx", 460).attr("cy", 320).attr("r", 20).style('fill', 'none').attr('stroke', 'black');
+
+d3.select('svg').append("g").append("text")
+    .attr("x", 120)
+    .attr("y", 315)
+    .attr("fill", "black")
+    .attr("opacity", 1)
+    .text("Florida cases spiking")
+
+d3.select('svg').append("circle").attr("cx", 160).attr("cy", 350).attr("r", 20).style('fill', 'none').attr('stroke', 'black');
 </script>
 </body>
 </html>
